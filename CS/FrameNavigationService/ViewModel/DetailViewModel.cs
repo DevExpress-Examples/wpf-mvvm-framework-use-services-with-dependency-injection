@@ -1,17 +1,16 @@
 ﻿using DevExpress.Mvvm;
-using DevExpress.Mvvm.CodeGenerators;
+using DevExpress.Mvvm.DataAnnotations;
 
 namespace FrameNavigation.ViewModel {
-    [GenerateViewModel(ImplementISupportParentViewModel = true)]
-    public partial class DetailViewModel {
+    public class DetailViewModel : ViewModelBase {
         INavigationService navigationService;
 
         public DetailViewModel(INavigationService navigationService) => this.navigationService = navigationService;
 
-        [GenerateCommand]
-        void NavigateNextDetail() => navigationService.Navigate("NextDetailView", null, this);
-        [GenerateCommand]
-        void NavigateForward() => navigationService.GoForward();
-        bool CanNavigateForward() => navigationService != null && navigationService.CanGoForward;
+        [Command]
+        public void NavigateNextDetail() => navigationService.Navigate("NextDetailView", null, this);
+        [Command]
+        public void NavigateForward() => navigationService.GoForward();
+        public bool CanNavigateForward() => navigationService != null && navigationService.CanGoForward;
     }
 }

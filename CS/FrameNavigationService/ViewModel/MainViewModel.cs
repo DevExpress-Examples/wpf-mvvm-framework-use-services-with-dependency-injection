@@ -1,14 +1,13 @@
 ﻿using DevExpress.Mvvm;
-using DevExpress.Mvvm.CodeGenerators;
+using DevExpress.Mvvm.DataAnnotations;
 
 namespace FrameNavigation.ViewModel {
-    [GenerateViewModel(ImplementISupportParentViewModel = true)]
-    public partial class MainViewModel {
+    public class MainViewModel : ViewModelBase {
         INavigationService navigationService;
 
         public MainViewModel(INavigationService navigationService) => this.navigationService = navigationService;
 
-        [GenerateCommand]
-        void OnLoaded() => navigationService.Navigate("HomeView", null, this);
+        [Command]
+        public void OnLoaded() => navigationService.Navigate("HomeView", null, this);
     }
 }
