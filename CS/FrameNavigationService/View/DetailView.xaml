@@ -1,0 +1,10 @@
+<UserControl x:Class="FrameNavigation.View.DetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
+             DataContext="{Binding DetailViewModel, Source={StaticResource ServiceLocator}}">
+
+    <dxwui:PageAdornerControl Header="Detail View" HeaderTemplate="{StaticResource PageAdornerHeaderTemplate}">
+        <Button Content="Go to Next Detail View" Command="{Binding NavigateNextDetailCommand}"/>
+    </dxwui:PageAdornerControl>
+</UserControl>

@@ -1,0 +1,10 @@
+<UserControl x:Class="FrameNavigation.View.NextDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
+             DataContext="{Binding NextDetailViewModel, Source={StaticResource ServiceLocator}}">
+
+    <dxwui:PageAdornerControl Header="Next Detail View" HeaderTemplate="{StaticResource PageAdornerHeaderTemplate}">
+        <Button Content="Go to Home View" Command="{Binding NavigateHomeCommand}"/>
+    </dxwui:PageAdornerControl>
+</UserControl>

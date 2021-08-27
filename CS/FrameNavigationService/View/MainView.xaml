@@ -1,0 +1,23 @@
+<Window x:Class="FrameNavigation.View.MainView" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
+        xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+        xmlns:common="clr-namespace:FrameNavigation.Common"
+        Title="NavigationService" Height="500" Width="500"
+        DataContext="{Binding MainViewModel, Source={StaticResource ServiceLocator}}"
+        dx:ThemeManager.ThemeName="Office2019White">
+
+    <Grid>
+        <dxwui:NavigationFrame AnimationType="SlideHorizontal" NavigationCacheMode="Required">
+            <dxmvvm:Interaction.Triggers>
+                <dxmvvm:EventToCommand EventName="Loaded" Command="{Binding OnLoadedCommand}"/>
+            </dxmvvm:Interaction.Triggers>
+
+            <dxmvvm:Interaction.Behaviors>
+                <common:AttachServiceBehavior ServiceType="{x:Type dxmvvm:INavigationService}" ServiceLocator="{StaticResource ServiceLocator}"/>
+            </dxmvvm:Interaction.Behaviors>
+        </dxwui:NavigationFrame>
+    </Grid>
+</Window>
