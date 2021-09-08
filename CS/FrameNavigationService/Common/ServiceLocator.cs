@@ -6,7 +6,7 @@ using FrameNavigation.ViewModel;
 using System;
 
 namespace FrameNavigation.Common {
-    public class ServiceLocator : IAtachableServicLocator {
+    public class ServiceLocator : IAtachableServiceLocator {
         readonly IContainer container;
 
         public MainViewModel MainViewModel => container.Resolve<MainViewModel>();

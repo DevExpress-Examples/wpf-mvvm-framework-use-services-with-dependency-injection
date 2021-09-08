@@ -2,7 +2,7 @@
 using System;
 
 namespace FrameNavigation.Common {
-    public interface IAtachableServicLocator {
+    public interface IAtachableServiceLocator {
         ServiceBase GetServiceBase(Type serviceType);
     }
 }

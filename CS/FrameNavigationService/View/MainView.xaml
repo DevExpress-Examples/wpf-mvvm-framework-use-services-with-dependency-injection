@@ -11,11 +11,8 @@
 
     <Grid>
         <dxwui:NavigationFrame AnimationType="SlideHorizontal" NavigationCacheMode="Required">
-            <dxmvvm:Interaction.Triggers>
-                <dxmvvm:EventToCommand EventName="Loaded" Command="{Binding OnLoadedCommand}"/>
-            </dxmvvm:Interaction.Triggers>
-
             <dxmvvm:Interaction.Behaviors>
+                <dxmvvm:EventToCommand EventName="Loaded" Command="{Binding OnLoadedCommand}"/>
                 <common:AttachServiceBehavior ServiceType="{x:Type dxmvvm:INavigationService}" ServiceLocator="{StaticResource ServiceLocator}"/>
             </dxmvvm:Interaction.Behaviors>
         </dxwui:NavigationFrame>

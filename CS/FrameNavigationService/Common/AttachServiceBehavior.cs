@@ -8,12 +8,12 @@ namespace FrameNavigation.Common {
         ServiceBase service;
 
         public static readonly DependencyProperty ServiceLocatorProperty =
-            DependencyProperty.Register(nameof(ServiceLocator), typeof(IAtachableServicLocator), typeof(AttachServiceBehavior), new PropertyMetadata(null, OnServiceChanged));
+            DependencyProperty.Register(nameof(ServiceLocator), typeof(IAtachableServiceLocator), typeof(AttachServiceBehavior), new PropertyMetadata(null, OnServiceChanged));
         public static readonly DependencyProperty ServiceTypeProperty =
             DependencyProperty.Register(nameof(ServiceType), typeof(Type), typeof(AttachServiceBehavior), new PropertyMetadata(null, OnServiceChanged));
 
-        public IAtachableServicLocator ServiceLocator {
-            get => (IAtachableServicLocator)GetValue(ServiceLocatorProperty);
+        public IAtachableServiceLocator ServiceLocator {
+            get => (IAtachableServiceLocator)GetValue(ServiceLocatorProperty);
             set => SetValue(ServiceLocatorProperty, value);
         }
         public Type ServiceType {
