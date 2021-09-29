@@ -3,11 +3,11 @@ using DevExpress.Mvvm.DataAnnotations;
 
 namespace FrameNavigation.ViewModel {
     public class MainViewModel : ViewModelBase {
-        INavigationService navigationService;
+        public INavigationService NavigationService { get; }
 
-        public MainViewModel(INavigationService navigationService) => this.navigationService = navigationService;
+        public MainViewModel(INavigationService navigationService) => NavigationService = navigationService;
 
         [Command]
-        public void OnLoaded() => navigationService.Navigate("HomeView", null, this);
+        public void OnLoaded() => NavigationService.Navigate("HomeView", null, this);
     }
 }

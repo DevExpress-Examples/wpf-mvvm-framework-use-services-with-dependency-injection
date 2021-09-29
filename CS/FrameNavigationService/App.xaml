@@ -2,16 +2,11 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:dxwuii="http://schemas.devexpress.com/winfx/2008/xaml/windowsui/internal"
-             xmlns:common="clr-namespace:FrameNavigation.Common"
              StartupUri="View\MainView.xaml">
 
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary>
-                    <common:ServiceLocator x:Key="ServiceLocator"/>
-                </ResourceDictionary>
-
                 <ResourceDictionary>
                     <Style TargetType="Button">
                         <Setter Property="HorizontalAlignment" Value="Center"/>

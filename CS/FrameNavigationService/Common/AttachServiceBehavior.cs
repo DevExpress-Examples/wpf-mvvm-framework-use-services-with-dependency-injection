@@ -1,27 +1,21 @@
 ﻿using DevExpress.Mvvm.UI;
 using DevExpress.Mvvm.UI.Interactivity;
-using System;
 using System.Windows;
 
 namespace FrameNavigation.Common {
     public class AttachServiceBehavior : Behavior<DependencyObject> {
-        ServiceBase service;
+        public static readonly DependencyProperty AtachableServiceProperty =
+            DependencyProperty.Register(nameof(AtachableService), typeof(ServiceBase), typeof(AttachServiceBehavior), new PropertyMetadata(null, OnAtachableServiceChanged));
 
-        public static readonly DependencyProperty ServiceLocatorProperty =
-            DependencyProperty.Register(nameof(ServiceLocator), typeof(IAtachableServiceLocator), typeof(AttachServiceBehavior), new PropertyMetadata(null, OnServiceChanged));
-        public static readonly DependencyProperty ServiceTypeProperty =
-            DependencyProperty.Register(nameof(ServiceType), typeof(Type), typeof(AttachServiceBehavior), new PropertyMetadata(null, OnServiceChanged));
-
-        public IAtachableServiceLocator ServiceLocator {
-            get => (IAtachableServiceLocator)GetValue(ServiceLocatorProperty);
-            set => SetValue(ServiceLocatorProperty, value);
-        }
-        public Type ServiceType {
-            get => (Type)GetValue(ServiceTypeProperty);
-            set => SetValue(ServiceTypeProperty, value);
+        static void OnAtachableServiceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
+            (e.OldValue as ServiceBase)?.Detach();
+            ((AttachServiceBehavior)d).AttachService();
         }
 
-        static void OnServiceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) => ((AttachServiceBehavior)d).AttachService();
+        public ServiceBase AtachableService {
+            get => (ServiceBase)GetValue(AtachableServiceProperty);
+            set => SetValue(AtachableServiceProperty, value);
+        }
 
         protected override void OnAttached() {
             base.OnAttached();
@@ -29,16 +23,15 @@ namespace FrameNavigation.Common {
         }
         protected override void OnDetaching() {
             base.OnDetaching();
-            service?.Detach();
+            AtachableService?.Detach();
         }
 
         void AttachService() {
-            if(ServiceLocator == null || ServiceType == null || AssociatedObject == null)
+            if(AtachableService == null || AssociatedObject == null)
                 return;
-            if(service != null)
-                service.Detach();
-            service = ServiceLocator.GetServiceBase(ServiceType);
-            service?.Attach(AssociatedObject);
+            if(AtachableService.IsAttached)
+                AtachableService.Detach();
+            AtachableService.Attach(AssociatedObject);
         }
     }
 }

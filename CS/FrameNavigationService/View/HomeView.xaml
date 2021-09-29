@@ -2,7 +2,9 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
-             DataContext="{Binding HomeViewModel, Source={StaticResource ServiceLocator}}">
+             xmlns:viewmodel="clr-namespace:FrameNavigation.ViewModel"
+             xmlns:common="clr-namespace:FrameNavigation.Common"
+             DataContext="{common:DISource Type=viewmodel:HomeViewModel}">
 
     <dxwui:PageAdornerControl Header="Home View" HeaderTemplate="{StaticResource PageAdornerHeaderTemplate}">
         <Button Content="Go to Detail View" Command="{Binding NavigateDetailsCommand}"/>
