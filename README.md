@@ -6,9 +6,9 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [MainViewModel.cs](./CS/ViewModel/MainViewModel.cs)
-* [MainView.xaml](./CS/View/MainView.xaml)
-* [AttachServiceBehavior.cs](./CS/Common/AttachServiceBehavior.cs)
+* [MainViewModel.cs](./CS/FrameNavigation/ViewModel/MainViewModel.cs)
+* [MainView.xaml](./CS/FrameNavigation/View/MainView.xaml)
+* [AttachServiceBehavior.cs](./CS/FrameNavigation/Common/AttachServiceBehavior.cs)
 <!-- default file list end -->
 
 # How to use DevExpress Services with Dependency Injection
