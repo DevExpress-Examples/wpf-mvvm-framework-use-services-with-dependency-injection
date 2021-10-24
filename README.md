@@ -2,13 +2,9 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [AutofacDI](./CS/AutofacDI/App.xaml.cs)
-* [DryIocDI](./CS/DryIocDI/App.xaml.cs)
-* [MicrosoftDI](./CS/MicrosoftDI/App.xaml.cs)
-* [NinjectDI](./CS/NinjectDI/App.xaml.cs)
-* [PrismDI](./CS/PrismDI/App.xaml.cs)
-* [SimpleInjectorDI](./CS/SimpleInjectorDI/App.xaml.cs)
-* [UnityDI](./CS/UnityDI/App.xaml.cs)
+* [MainViewModel.cs](./CS/ViewModel/MainViewModel.cs)
+* [MainView.xaml](./CS/View/MainView.xaml)
+* [AttachServiceBehavior.cs](./CS/Common/AttachServiceBehavior.cs)
 <!-- default file list end -->
 
 # How to use DevExpress Services with Dependency Injection
