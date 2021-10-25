@@ -29,7 +29,8 @@ Inject the service in the ViewModel's constructor:
 public class MainViewModel {
     public INavigationService NavigationService { get; }
 
-    public MainViewModel(INavigationService navigationService) => NavigationService = navigationService;
+    public MainViewModel(INavigationService navigationService) =>
+        NavigationService = navigationService;
 }
 ```
 
