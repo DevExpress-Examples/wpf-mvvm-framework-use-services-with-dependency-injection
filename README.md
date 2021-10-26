@@ -13,9 +13,9 @@
 
 # How to use DevExpress Services with Dependency Injection
 
-Use the AttachServiceBehavior to register services that require a specific view (such as FrameNavigationService, TabbedDocumentUIService, WizardService):
+Use the `AttachServiceBehavior` to register services that require a specific view (such as `FrameNavigationService`, `TabbedDocumentUIService`, `WizardService`):
 
-```
+``` xaml
 <dxwui:NavigationFrame>
     <dxmvvm:Interaction.Behaviors>
         <common:AttachServiceBehavior Service="{Binding NavigationService}"/>
@@ -25,7 +25,7 @@ Use the AttachServiceBehavior to register services that require a specific view 
 
 Inject the service in the ViewModel's constructor:
 
-```
+``` c#
 public class MainViewModel {
     public INavigationService NavigationService { get; }
 
@@ -34,6 +34,6 @@ public class MainViewModel {
 }
 ```
 
-This example illustrates how to apply this technique to use the NavigationService with Dependency Injection.
+This example illustrates how to apply this technique to use the `NavigationService` with Dependency Injection.
 
 <br/>
