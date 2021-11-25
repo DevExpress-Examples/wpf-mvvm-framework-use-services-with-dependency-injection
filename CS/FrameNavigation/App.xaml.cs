@@ -1,8 +1,8 @@
 ﻿using Autofac;
+using Autofac.Features.ResolveAnything;
 using DevExpress.Mvvm;
 using DevExpress.Xpf.WindowsUI.Navigation;
 using FrameNavigation.Common;
-using FrameNavigation.ViewModel;
 using System;
 using System.Windows;
 
@@ -26,10 +26,8 @@ namespace FrameNavigation {
 
         static IContainer BuildUpContainer() {
             var builder = new ContainerBuilder();
+            builder.RegisterSource(new AnyConcreteTypeNotAlreadyRegisteredSource());
             builder.RegisterType<FrameNavigationService>().As<INavigationService>().SingleInstance();
-            builder.RegisterType<MainViewModel>().AsSelf();
-            builder.RegisterType<HomeViewModel>().AsSelf();
-            builder.RegisterType<DetailViewModel>().AsSelf();
             return builder.Build();
         }
     }
