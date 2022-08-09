@@ -3,17 +3,12 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1038933)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
 
-* [MainViewModel.cs](./CS/FrameNavigation/ViewModel/MainViewModel.cs)
-* [MainView.xaml](./CS/FrameNavigation/View/MainView.xaml)
-* [AttachServiceBehavior.cs](./CS/FrameNavigation/Common/AttachServiceBehavior.cs)
-<!-- default file list end -->
+# How to Use DevExpress Services with Dependency Injection
 
-# How to use DevExpress Services with Dependency Injection
+This example illustrates how to use the `NavigationService` with Dependency Injection.
 
-Use the `AttachServiceBehavior` to register services that require a specific view (such as `FrameNavigationService`, `TabbedDocumentUIService`, `WizardService`):
+Use the `AttachServiceBehavior` to register services that require a specific view (such as [FrameNavigationService](https://docs.devexpress.com/WPF/113944/mvvm-framework/services/predefined-set/framenavigationservice), [TabbedDocumentUIService](https://docs.devexpress.com/WPF/18173/mvvm-framework/services/predefined-set/document-services/tabbeddocumentuiservice), [WizardService](https://docs.devexpress.com/WPF/116321/mvvm-framework/services/predefined-set/wizardservice)):
 
 ``` xaml
 <dxwui:NavigationFrame>
@@ -34,6 +29,14 @@ public class MainViewModel {
 }
 ```
 
-This example illustrates how to apply this technique to use the `NavigationService` with Dependency Injection.
+<!-- default file list -->
+## Files to Look At
 
-<br/>
+* [MainViewModel.cs](./CS/FrameNavigation/ViewModel/MainViewModel.cs)
+* [MainView.xaml](./CS/FrameNavigation/View/MainView.xaml)
+* [AttachServiceBehavior.cs](./CS/FrameNavigation/Common/AttachServiceBehavior.cs)
+<!-- default file list end -->
+
+## Documentation
+
+* [Use Services with Dependency Injection](https://docs.devexpress.com/WPF/403514/mvvm-framework/dependency-injection#use-services-with-dependency-injection)
