@@ -4,7 +4,7 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 
-# Use DevExpress Services with Dependency Injection
+# DevExpress MVVM Framework - Use DevExpress Services with Dependency Injection
 
 This example illustrates how to use the `NavigationService` with Dependency Injection.
 
