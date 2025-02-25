@@ -14,7 +14,7 @@
         <dxwui:NavigationFrame AnimationType="SlideHorizontal" NavigationCacheMode="Required">
             <dxmvvm:Interaction.Behaviors>
                 <dxmvvm:EventToCommand EventName="Loaded" Command="{Binding OnLoadedCommand}"/>
-                <common:AttachServiceBehavior AtachableService="{Binding NavigationService}"/>
+                <common:AttachServiceBehavior AttachableService="{Binding NavigationService}"/>
             </dxmvvm:Interaction.Behaviors>
         </dxwui:NavigationFrame>
     </Grid>
