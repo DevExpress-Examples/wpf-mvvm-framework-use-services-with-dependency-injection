@@ -4,17 +4,17 @@ using System.Windows;
 
 namespace FrameNavigation.Common {
     public class AttachServiceBehavior : Behavior<DependencyObject> {
-        public static readonly DependencyProperty AtachableServiceProperty =
-            DependencyProperty.Register(nameof(AtachableService), typeof(ServiceBase), typeof(AttachServiceBehavior), new PropertyMetadata(null, OnAtachableServiceChanged));
+        public static readonly DependencyProperty AttachableServiceProperty =
+            DependencyProperty.Register(nameof(AttachableService), typeof(ServiceBase), typeof(AttachServiceBehavior), new PropertyMetadata(null, OnAttachableServiceChanged));
 
-        static void OnAtachableServiceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
+        static void OnAttachableServiceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
             (e.OldValue as ServiceBase)?.Detach();
             ((AttachServiceBehavior)d).AttachService();
         }
 
-        public ServiceBase AtachableService {
-            get => (ServiceBase)GetValue(AtachableServiceProperty);
-            set => SetValue(AtachableServiceProperty, value);
+        public ServiceBase AttachableService {
+            get => (ServiceBase)GetValue(AttachableServiceProperty);
+            set => SetValue(AttachableServiceProperty, value);
         }
 
         protected override void OnAttached() {
@@ -23,15 +23,15 @@ namespace FrameNavigation.Common {
         }
         protected override void OnDetaching() {
             base.OnDetaching();
-            AtachableService?.Detach();
+            AttachableService?.Detach();
         }
 
         void AttachService() {
-            if(AtachableService == null || AssociatedObject == null)
+            if(AttachableService == null || AssociatedObject == null)
                 return;
-            if(AtachableService.IsAttached)
-                AtachableService.Detach();
-            AtachableService.Attach(AssociatedObject);
+            if(AttachableService.IsAttached)
+                AttachableService.Detach();
+            AttachableService.Attach(AssociatedObject);
         }
     }
 }
